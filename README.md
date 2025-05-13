@@ -1,5 +1,9 @@
 # SERIAL-IN-SERIAL-OUT-SHIFTREGISTER
 
+Developed by:GAYATHRI M
+
+RegisterNumber:212224050007
+
 **AIM:**
 
 To implement  SISO Shift Register using verilog and validating their functionality using their functional tables
@@ -25,18 +29,49 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Write the Verilog module with inputs clk, reset, serial_in, and output serial_out.
+
+2.Implement logic to shift input bits into the register on every clock pulse.
+
+3.Create a Verilog testbench to apply input sequences and generate clock signals.
+
+4.Simulate the design and observe the output waveforms using a simulator.
+
+5.Compare simulation results with the functional table to validate correctness.
+
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming.
+~~~c
+module siso(clk, sin, q);
+input clk;
+input sin;
+output [3:0] q;
+reg [3:0] q;
+always @(posedge clk)
+begin
+q[0] <= sin;
+q[1] <= q[0];
+q[2] <= q[1];
+q[3] <= q[2];
+end
+endmodule
+~~~
 
-Developed by: RegisterNumber:
 
 */
 
 **RTL LOGIC FOR SISO Shift Register**
 
+![Screenshot 2025-05-13 213849](https://github.com/user-attachments/assets/dcb840ec-b25b-4801-8f02-c694bc49d116)
+
+
 **TIMING DIGRAMS FOR SISO Shift Register**
 
+![Screenshot 2025-05-13 214445](https://github.com/user-attachments/assets/5b3fc6a5-283d-4356-b112-b03e4eab7ea7)
+
+
 **RESULTS**
+
+ Thus THE SERIAL-IN-SERIAL-OUT-SHIFTREGISTER was successfully verified.
